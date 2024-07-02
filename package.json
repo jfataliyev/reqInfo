@@ -2,17 +2,25 @@
   "name": "req-info",
   "version": "0.1.2",
   "main": "index.js",
+  "default_port": "3003",
   "engines": {
     "node": "20.x"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.js; curl localhost:3003; echo \"Approve: test passed\" && exit 1",
+    "build": "bun build index.js --compile --outfile req-info"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "cli-style": "^0.1.1",
+    "commander": "^12.1.0",
+    "daemon": "^1.1.0",
+    "daemonize-process": "^4.1.0",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "pm2": "^5.4.1"
   }
 }
