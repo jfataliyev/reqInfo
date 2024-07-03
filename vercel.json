@@ -2,19 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.js",
+      "src": "web_service.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/index.js"
+      "src": "/",
+      "dest": "/web_service.js"
     },
     {
       "src": "/(.*).",
       "headers": {"Cache-Control": "max-age=0"},
-      "dest": "/index.js"
+      "dest": "/web_service.js"
     }
   ]
 }
